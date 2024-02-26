@@ -1,0 +1,6 @@
+{
+    "storageFile":"Chubenko_Alona_superheroes.json",
+    "adapterFile":"superheroAdapter.js",
+    "primary_key":"heroID",
+    "resource":"superheroes"
+}

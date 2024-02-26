@@ -1,0 +1,51 @@
+[
+{
+"heroID":2,
+"name":  "SuperGenius",
+"yearOfBirth":1990,
+"superproperty":"amnesia",
+"gear":"Glove"
+},
+{
+"heroID":4,
+"name":"Lightning",
+"yearOfBirth":1930,
+"superproperty":"quantum stare",
+"gear":"HelmeT"
+},
+{
+"heroID":6,
+"name":"SteelFoot",
+"yearOfBirth":2000,
+"superproperty":"ridiculously fast",
+"gear":"JumpBoots"
+},
+{
+"heroID":5,
+"name":"SuperMoron",
+"yearOfBirth":2012,
+"superproperty":"evil eye",
+"gear":"SeachEngine"
+},
+{
+"heroID":3,
+"name":"Rustman",
+"yearOfBirth":1890,
+"superproperty":"timer",
+"gear":"Cape"
+},
+{
+"heroID":7,
+"name":"DataMaster",
+"yearOfBirth":2017,
+"superproperty":"flash",
+"gear":"SuperArmour"
+},
+{
+"heroID":1,
+"name":"SuperQL",
+"yearOfBirth":1905,
+"superproperty":"healer",
+"gear":"MemoryEnhancer"
+}
+]
