@@ -14,7 +14,7 @@
         searchvalue = document.getElementById('searchvalue');
 
         try {
-            const data = await fetch('http://localhost:4000/rest/employees/keys');
+            const data = await fetch('http://localhost:4000/rest/superheroes/keys');
             if (data.ok) {
                 const keys = await data.json();
                 if (keys.length > 0) {
@@ -72,18 +72,18 @@
             showErrorMessage('Nothing found');
         }
         else {
-            const htmlString = data.map(item => createPerson(item)).join(' ');
+            const htmlString = data.map(item => createSuperhero(item)).join(' ');
             resultarea.innerHTML = htmlString;
         }
     }
 
-    function createPerson(person) {
-        return `<div class="person">
-        <p>id: ${person.id}</p>
-        <p>First name: ${person.firstname}</p>
-        <p>Last name: ${person.lastname}</p>
-        <p>Department: ${person.department}</p>
-        <p>Salary: ${person.salary}</p>
+    function createSuperhero(superhero) {
+        return `<div class="superhero">
+        <p>id: ${superhero.heroID}</p>
+        <p>Name: ${superhero.name}</p>
+        <p>yearOfBirth: ${superhero.yearOfBirth}</p>
+        <p>Superproperty: ${superhero.superproperty}</p>
+        <p>Gear: ${superhero.gear}</p>
     </div>`
     }
 
