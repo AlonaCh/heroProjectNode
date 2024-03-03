@@ -8,7 +8,7 @@
 
     function init() {
         resultarea = document.getElementById('resultarea');
-        inputField = document.getElementById('employeeId');
+        inputField = document.getElementById('id');
 
         document.getElementById('submit')
             .addEventListener('click', send);
