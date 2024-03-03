@@ -6,18 +6,18 @@
     //we need to have rest server running
     async function init() {
         try {
-            const data = await fetch('http://localhost:4000/rest/employees', { mode: 'cors' });
+            const data = await fetch('http://localhost:4000/rest/superheroes', { mode: 'cors' });
             const result = await data.json();
 
             const resultset = document.getElementById('resultset');
 
-            for (const person of result) {
+            for (const superhero of result) {
                 const tr = document.createElement('tr');
-                tr.appendChild(createCell(person.id));
-                tr.appendChild(createCell(person.firstname));
-                tr.appendChild(createCell(person.lastname));
-                tr.appendChild(createCell(person.department));
-                tr.appendChild(createCell(person.salary));
+                tr.appendChild(createCell(superhero.heroID));
+                tr.appendChild(createCell(superhero.name));
+                tr.appendChild(createCell(superhero.yearOfBirth));
+                tr.appendChild(createCell(superhero.superproperty));
+                tr.appendChild(createCell(superhero.gear));
                 resultset.appendChild(tr);
             }
         }
