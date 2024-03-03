@@ -1,24 +1,25 @@
 'use strict';
 
 (function () {
-    let idField;
-    let firstnameField;
-    let lastnameField;
-    let departmentField;
-    let salaryField;
 
+    let idField;
+    let nameField;
+    let yearOfBirthField;
+    let superpropertyField;
+    let gearField;
     let resultarea;
+
 
     let searchState = true;
 
     document.addEventListener('DOMContentLoaded', init);
 
     function init() {
-        idField = document.getElementById('id');
-        firstnameField = document.getElementById('firstname');
-        lastnameField = document.getElementById('lastname');
-        departmentField = document.getElementById('department');
-        salaryField = document.getElementById('salary');
+        idField = document.getElementById('heroID');
+        nameField = document.getElementById('name');
+        yearOfBirthField = document.getElementById('yearOfBirth');
+        superpropertyField = document.getElementById('superproperty');
+        gearField = document.getElementById('gear');
 
         resultarea = document.getElementById('resultarea');
 
@@ -39,10 +40,10 @@
     function clearAll() {
         if (searchState) {
             idField.value = '';
-            firstnameField.value = '';
-            lastnameField.value = '';
-            departmentField.value = '';
-            salaryField.value = '';
+            nameField.value = '';
+            yearOfBirthField.value = '';
+            superpropertyField.value = '';
+            gearField.value = '';
             resultarea.textContent = '';
             resultarea.removeAttribute('class');
             updateFieldsAccess();
@@ -53,35 +54,35 @@
     function updateFieldsAccess() {
         if (searchState) {
             idField.removeAttribute('readonly');
-            firstnameField.setAttribute('readonly', true);
-            lastnameField.setAttribute('readonly', true);
-            departmentField.setAttribute('readonly', true);
-            salaryField.setAttribute('readonly', true);
+            nameField.setAttribute('readonly', true);
+            yearOfBirthField.setAttribute('readonly', true);
+            superpropertyField.setAttribute('readonly', true);
+            gearField.setAttribute('readonly', true);
         }
         else {
             idField.setAttribute('readonly', true);
-            firstnameField.removeAttribute('readonly');
-            lastnameField.removeAttribute('readonly');
-            departmentField.removeAttribute('readonly');
-            salaryField.removeAttribute('readonly');
+            nameField.removeAttribute('readonly');
+            yearOfBirthField.removeAttribute('readonly');
+            superpropertyField.removeAttribute('readonly');
+            gearField.removeAttribute('readonly');
         }
 
     }//updateFieldsAccess
 
     async function send() {
-        const baseUri = 'http://localhost:4000/rest/employees';
+        const baseUri = 'http://localhost:4000/rest/superheroes';
         try {
             if (searchState) {
                 //get data
-                const data = await fetch(`${baseUri}/id/${idField.value}`, { mode: 'cors' });
+                const data = await fetch(`${baseUri}/heroID/${idField.value}`, { mode: 'cors' });
                 const result = await data.json();
                 if (result.length > 0) {
-                    const person = result[0];
-                    idField.value = person.id;
-                    firstnameField.value = person.firstname;
-                    lastnameField.value = person.lastname;
-                    departmentField.value = person.department;
-                    salaryField.value = person.salary;
+                    const superhero = result[0];
+                    idField.value = superhero.id;
+                    nameField.value = superhero.firstname;
+                    yearOfBirthField.value = superhero.lastname;
+                    superpropertyField.value = superhero.department;
+                    gearField.value = superhero.salary;
                     searchState = false;
                     updateFieldsAccess();
                 }
@@ -91,20 +92,20 @@
             }
             else {
                 //put data
-                const person = {
-                    id: +idField.value,
-                    firstname: firstnameField.value,
-                    lastname: lastnameField.value,
-                    department: departmentField.value,
-                    salary: +salaryField.value //convert to number, this cam do our backend through the adapter
+                const superhero = {
+                    heroID: +idField.value,
+                    name: nameField.value.value,
+                    yearOfBirth: +yearOfBirthField.value,
+                    superproperty: superpropertyField.value,
+                    gear: gearField.value
                 };
                 const options = {
                     method: 'PUT',
                     mode: 'cors',
-                    body: JSON.stringify(person),
+                    body: JSON.stringify(superhero),
                     headers: { 'Content-Type': 'application/json' }
                 }
-                const data = await fetch(`${baseUri}/${person.id}`, options);
+                const data = await fetch(`${baseUri}/${superhero.heroID}`, options);
                 const result = await data.json();
 
                 updateStatus(result);

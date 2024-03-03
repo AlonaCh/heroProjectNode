@@ -38,7 +38,7 @@
                     mode: 'cors',
                 };
 
-                const data = await fetch(`http://localhost:4000/rest/employees/${value}`, options);
+                const data = await fetch(`http://localhost:4000/rest/superheroes/${value}`, options);
                 const result = await data.json();
                 updateStatus(result);
             }

@@ -38,7 +38,7 @@
     async function send() {
         const superhero = {
             heroID: +idField.value,
-            name: nameField.value.value,
+            name: nameField.value,
             yearOfBirth: +yearOfBirthField.value,
             superproperty: superpropertyField.value,
             gear: gearField.value
@@ -47,7 +47,7 @@
         try {
             const options = {
                 method: 'POST',
-                body: JSON.stringify(person),
+                body: JSON.stringify(superhero),
                 headers: { 'Content-Type': 'application/json' },
                 mode: 'cors'
             };
