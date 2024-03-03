@@ -3,10 +3,10 @@
 (function () {
 
     let idField;
-    let firstnameField;
-    let lastnameField;
-    let departmentField;
-    let salaryField;
+    let nameField;
+    let yearOfBirthField;
+    let superpropertyField;
+    let gearField;
     let resultarea;
 
 
@@ -14,11 +14,11 @@
 
     function init() {
         resultarea = document.getElementById('resultarea');
-        idField = document.getElementById('id');
-        firstnameField = document.getElementById('firstname');
-        lastnameField = document.getElementById('lastname');
-        departmentField = document.getElementById('department');
-        salaryField = document.getElementById('salary');
+        idField = document.getElementById('heroID');
+        nameField = document.getElementById('name');
+        yearOfBirthField = document.getElementById('yearOfBirth');
+        superpropertyField = document.getElementById('superproperty');
+        gearField = document.getElementById('gear');
 
         document.getElementById('submit').addEventListener('click', send);
 
@@ -27,21 +27,21 @@
 
     function clear() {
         idField.value = '';
-        firstnameField.value = '';
-        lastnameField.value = '';
-        departmentField.value = '';
-        salaryField.value = '';
+        nameField.value = '';
+        yearOfBirthField.value = '';
+        superpropertyField.value = '';
+        gearField.value = '';
         resultarea.textContent = '';
         resultarea.removeAttribute('class');
     }
 
     async function send() {
-        const person = {
-            id: +idField.value,
-            firstname: firstnameField.value,
-            lastname: lastnameField.value,
-            department: departmentField.value,
-            salary: +salaryField.value
+        const superhero = {
+            heroID: +idField.value,
+            name: nameField.value.value,
+            yearOfBirth: +yearOfBirthField.value,
+            superproperty: superpropertyField.value,
+            gear: gearField.value
         };
 
         try {
@@ -51,7 +51,7 @@
                 headers: { 'Content-Type': 'application/json' },
                 mode: 'cors'
             };
-            const data = await fetch('http://localhost:4000/rest/employees', options);
+            const data = await fetch('http://localhost:4000/rest/superheroes', options);
             const result = await data.json();
 
             updateStatus(result)
