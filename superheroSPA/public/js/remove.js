@@ -8,7 +8,7 @@
 
     function init() {
         resultarea = document.getElementById('resultarea');
-        inputField = document.getElementById('id');
+        inputField = document.getElementById('superheroId');
 
         document.getElementById('submit')
             .addEventListener('click', send);
@@ -47,8 +47,6 @@
             }
         }
     }
-
-
 
 
 })();

@@ -78,11 +78,11 @@
                 const result = await data.json();
                 if (result.length > 0) {
                     const superhero = result[0];
-                    idField.value = superhero.id;
-                    nameField.value = superhero.firstname;
-                    yearOfBirthField.value = superhero.lastname;
-                    superpropertyField.value = superhero.department;
-                    gearField.value = superhero.salary;
+                    idField.value = superhero.heroID;
+                    nameField.value = superhero.name;
+                    yearOfBirthField.value = superhero.yearOfBirth;
+                    superpropertyField.value = superhero.superproperty;
+                    gearField.value = superhero.gear;
                     searchState = false;
                     updateFieldsAccess();
                 }
@@ -94,7 +94,7 @@
                 //put data
                 const superhero = {
                     heroID: +idField.value,
-                    name: nameField.value.value,
+                    name: nameField.value,
                     yearOfBirth: +yearOfBirthField.value,
                     superproperty: superpropertyField.value,
                     gear: gearField.value

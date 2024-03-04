@@ -53,7 +53,7 @@
 
         try {
 
-            const data = await fetch(`http://localhost:4000/rest/employees/${keyName}/${value}`, { mode: 'cors' });
+            const data = await fetch(`http://localhost:4000/rest/superheroes/${keyName}/${value}`, { mode: 'cors' });
             const result = await data.json();
 
             updatePage(result);
@@ -79,7 +79,7 @@
 
     function createSuperhero(superhero) {
         return `<div class="superhero">
-        <p>id: ${superhero.heroID}</p>
+        <p>HeroID: ${superhero.heroID}</p>
         <p>Name: ${superhero.name}</p>
         <p>yearOfBirth: ${superhero.yearOfBirth}</p>
         <p>Superproperty: ${superhero.superproperty}</p>

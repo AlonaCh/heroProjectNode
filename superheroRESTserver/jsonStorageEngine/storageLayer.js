@@ -17,6 +17,8 @@ function createStorageLayer(storageFolder, storageConfigFile) {
     // console.log('storageFilePath', storageFilePath);
     // console.log('adapterPath', path.join(storageFolder, adapterFile))
 
+    const { adapt } = require(path.join(storageFolder, adapterFile));
+
     async function getAllFromStorage() {
         return await readStorage(storageFilePath);
     }

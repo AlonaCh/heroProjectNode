@@ -2,7 +2,7 @@
 
 function adapt(item) {
     return Object.assign(item, {
-        id: +item.heroID,
+        heroID: +item.heroID,
         yearOfBirth: +item.yearOfBirth
     }
     )
