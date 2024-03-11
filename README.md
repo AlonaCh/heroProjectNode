@@ -3,7 +3,7 @@
 - Here a CRUD operations is used
 - We need to have rest server running
 
-## Superhero app
+## Tasks
 
 - Create a folder for the project
 - Create json file for the data
