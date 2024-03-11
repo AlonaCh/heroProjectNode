@@ -1,6 +1,3 @@
-//where to find our resources
-//it is frontserver
-//this server is serving the static files
 
 'use strict';
 

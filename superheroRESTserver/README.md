@@ -1,4 +1,7 @@
-# Tasks
+# Superhero project
+
+- Here a CRUD operations is used
+- We need to have rest server running
 
 ## Superhero app
 

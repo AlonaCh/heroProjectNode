@@ -3,7 +3,7 @@
 (function () {
 
     document.addEventListener('DOMContentLoaded', init);
-    //we need to have rest server running
+
     async function init() {
         try {
             const data = await fetch('http://localhost:4000/rest/superheroes', { mode: 'cors' });
